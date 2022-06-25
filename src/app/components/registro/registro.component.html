@@ -1,3 +1,4 @@
+
 <body>
   <div class="container" id="container">
     <div class="form-container sign-up-container">
@@ -10,16 +11,17 @@
         <button>Entrar</button>
       </form>
     </div>
+
     <div class="form-container sign-in-container">
       <form action="#">
-        <h1>Registrarme</h1>
-        <span>Usa tu email para registrarte</span>
-        <input type="text" placeholder="Name" />
-        <input type="email" placeholder="Email" />
-        <input type="password" placeholder="Password" />
-        <button ><a href="/sucursales">Entrar</a></button>
+        <h1>Registrate</h1>
+        <input [(ngModel)]="user.nombre" #name="ngModel" name="name" type="text" id="form3Example1c" class="form-control" required placeholder="Name" />
+        <input [(ngModel)]="user.email" #email="ngModel" name="email" type="email" id="form3Example3c" class="form-control" required placeholder="Email" />
+        <input [(ngModel)]="user.password" #password="ngModel" name="password" type="password" id="form3Example4c" class="form-control" required placeholder="Password" />
+        <button class="btn btn-outline-light btn-lg px-5" type="submit" (click)="register()">Entrar</button>
       </form>
     </div>
+
     <div class="overlay-container">
       <div class="overlay">
         <div class="overlay-panel overlay-right">
