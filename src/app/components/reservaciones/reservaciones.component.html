@@ -1,0 +1,48 @@
+<body  style="background: url(../../../assets/img/hotelreservacion.jpg) no-repeat; background-size: cover;">
+<div class="container">
+  <nav class="navbar navbar-expand-lg navbar-light  mb-5">
+
+  </nav>
+  <div class="d-md-flex align-items-center justify-content-between pb-3">
+      <div class="content mb-md-0 mb-5">
+          <p class="h2">Has tu Reservación de una manera Fácil</p>
+          <p class="line"></p>
+          <p class="p2">Financial uncertainty is hard on employees and causes even.</p>
+          <div class="btn btn-primary">Regresar</div>
+      </div>
+      <form>
+          <div class="d-flex flex-column align-items-center">
+              <p class="fs-4 fw-bold m-0 mt-4">Hotel </p> <span class="text-muted">Por favor has
+              tu Reservación con Atención   </span> <span class="line my-3"></span>
+          </div>
+          <div class="row p-0">
+              <div class="col-12 p-0 px-4">
+                <div class="form-group col-md-6">
+                  <label class="sr-only" >Fecha de Inicio</label>
+                  <input [(ngModel)]="reservacionesModelAdd.FechaInicio" #inicio="ngModel" name="inicio" class="form-control" type="date" id="inputDate" required>
+              </div>
+              <br>
+              <div class="form-group col-md-6">
+                <label class="sr-only" >Fecha de Salida</label>
+                <input [(ngModel)]="reservacionesModelAdd.FechaSalida" #salida="ngModel" name="salida" class="form-control" type="date" id="inputDate" required>
+            </div>
+              </div>
+                  <div class="col-12 p-2 px-4 my-2">
+                    <input [(ngModel)]="reservacionesModelAdd.NombreReservacion" #nombre="ngModel" name="nombre" type="text" id="typeEmailX" name="text"
+                            placeholder="Nombre de la Reservación"/>
+                  </div>
+
+
+
+              <div class="col-12 p-0 px-4">
+                  <div class="d-flex align-items-center my-3"> <span class="text-muted text-uppercase">you have to
+                          pay:</span> <span class="c-g ps-1">$ <span id="money"></span></span> </div>
+              </div>
+              <div class="col-12 p-0 px-4">
+                  <div class="btn btn-primary w-100" type="submit" (click)="agregarReservaciones()">Reservar Ahora</div>
+                  <div class="text-muted text-center mb-4 mt-3">Clic en el boton para hacer la Reservación</div>
+              </div>
+          </div>
+      </form>
+  </div>
+</div>
