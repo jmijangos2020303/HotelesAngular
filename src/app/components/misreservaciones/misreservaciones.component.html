@@ -1,0 +1,88 @@
+<section class="about-services">
+  <div class="contenedor">
+    <h1 class="text">Tus Reservaciones</h1>
+    <div class="card" style="width: 18rem;" *ngFor="let reser of reservacionesModelGet">
+      <img src="../../../assets/img/hotelreservacion.jpg" class="card-img-top" alt="...">
+      <div class="card-body" *ngFor="let reser of reservacionesModelGet">
+        <h5 class="card-title">Nombre del Hotel</h5>
+        <p class="card-text">La Reservacion tiene como fecha de inicio el dia {{reser.FechaInicio}}, y como fecha final es el dia {{reser.FechaSalida}}.</p>
+        <p class="card-text">Nombre de la Reservacion: {{reser.NombreReservacion}}</p>
+        <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+          <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" checked>
+          <label class="btn btn-outline-danger" for="btnradio1" data-bs-toggle="offcanvas"
+          data-bs-target="#offcanvasExample" aria-controls="offcanvasExample"
+          (click)="obtenerReservacion(reser._id)">Editar</label>
+
+          <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off">
+          <label class="btn btn-outline-danger" for="btnradio2" (click)="eliminarReservacion(reser._id)">Eliminar</label>
+        </div>
+      </div>
+    </div>
+
+
+<!-- OffCanvas Editar Sucursal -->
+<div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title" id="offcanvasExampleLabel">Editar Sucursal</h5>
+    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body">
+    <form>
+      <div class="mb-3">
+        <label for="inputtelefono" class="form-label">Fecha Inicio</label>
+        <input type="text" class="form-control" id="inputtelefono" type="date" name="FechaInicio" #FechaInicio="ngModel"
+          [(ngModel)]="reservacionesModelGetId.FechaInicio">
+      </div>
+      <div class="mb-3">
+        <label for="inputdireccion" class="form-label">Fecha Final</label>
+        <input type="text" class="form-control" type="date" id="inputdireccion" name="FechaSalida" #FechaSalida="ngModel"
+          [(ngModel)]="reservacionesModelGetId.FechaSalida">
+      </div>
+      <div class="mb-3">
+        <label for="inputdireccion" class="form-label">Nombre Reservación</label>
+        <input type="text" class="form-control" id="inputdireccion" name="direccion" #direccion="ngModel"
+          [(ngModel)]="reservacionesModelGetId.NombreReservacion">
+      </div>
+      <button type="submit" class="btn btn-success" (click)="editarReservacion()" data-bs-dismiss="offcanvas">Editar
+        Sucursales</button>
+    </form>
+  </div>
+</div>
+</div>
+
+</section>
+<footer>
+  <div class="footer-container">
+      <div class="footer-content-container">
+          <h3 class="website-logo">Gestor de Hoteles</h3>
+          <span class="footer-info">Fundacion Kinal</span>
+          <span class="footer-info">academy@itskrey.com</span>
+      </div>
+      <div class="footer-menus">
+          <div class="footer-content-container">
+              <span class="menu-title">menu</span>
+              <a href="/inicio" class="menu-item-footer">Inicio</a>
+              <a href="../../../assets/Hotel.jpg" class="menu-item-footer">Courses</a>
+              <a href="../../../assets/Hotel.jpg" class="menu-item-footer">Testimonials</a>
+          </div>
+          <div class="footer-content-container">
+              <span class="menu-title">legal</span>
+              <a href="../../../assets/Hotel.jpg" class="menu-item-footer">Privacy Policy</a>
+              <a href="../../../assets/Hotel.jpg" class="menu-item-footer">Cookies</a>
+              <a href="../../../assets/Hotel.jpg" class="menu-item-footer">Legal Advice</a>
+          </div>
+      </div>
+
+      <div class="footer-content-container">
+          <span class="menu-title">follow us</span>
+          <div class="social-container">
+              <a href="../../../assets/Hotel.jpg" class="social-link"></a>
+              <a href="../../../assets/Hotel.jpg" class="social-link"></a>
+              <a href="../../../assets/Hotel.jpg" class="social-link"></a>
+          </div>
+      </div>
+  </div>
+  <div class="copyright-container">
+      <span class="copyright">Copyright 2022, Grupo 3 Todos los Derechos Reservados.</span>
+  </div>
+</footer>

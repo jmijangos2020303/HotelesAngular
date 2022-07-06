@@ -37,7 +37,7 @@ export class ReservacionesService {
   obtenerReservacionId(token, id: string): Observable<any> {
     let headersToken = this.headersVariable.set('Authorization', token);
 
-    return this._http.get(this.url + '/obtenerReservacionId/' + id, {
+    return this._http.get(this.url + '/obtenerReservacion/' + id, {
       headers: headersToken,
     });
   }
@@ -46,12 +46,12 @@ export class ReservacionesService {
     let params = JSON.stringify(reservacion);
     let headersToken = this.headersVariable.set('Authorization', this.getToken())
 
-    return this._http.put(this.url + '/editarReservacionADMIN/' + reservacion._id, params, {headers: headersToken})
+    return this._http.put(this.url + '/editarReservacion/' + reservacion._id, params, {headers: headersToken})
   }
 
   eliminarReservacion(id:String): Observable<any>{
     let headersToken = this.headersVariable.set('Authorization', this.getToken());
-    return this._http.delete(this.url + '/eliminarReservacionAdmin/' + id, {headers: headersToken})
+    return this._http.delete(this.url + '/eliminarReservacion/' + id, {headers: headersToken})
   }
 
   obtenerHabitaciones(token): Observable<any> {

@@ -9,6 +9,9 @@ import { RegistroComponent } from './components/registro/registro.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { InicioComponent } from './components/inicio/inicio.component';
 import { ReservacionesComponent } from './components/reservaciones/reservaciones.component';
+import { MisreservacionesComponent } from './components/misreservaciones/misreservaciones.component';
+import { HabitacionesComponent } from './components/habitaciones/habitaciones.component';
+import { ActualizarUsuarioComponent } from './components/actualizar-usuario/actualizar-usuario.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +20,10 @@ import { ReservacionesComponent } from './components/reservaciones/reservaciones
     RegistroComponent,
     NavbarComponent,
     InicioComponent,
-    ReservacionesComponent
+    ReservacionesComponent,
+    MisreservacionesComponent,
+    HabitacionesComponent,
+    ActualizarUsuarioComponent
   ],
   imports: [
     BrowserModule,

@@ -4,8 +4,9 @@ export class Reservaciones{
     public FechaInicio: String,
     public FechaSalida: String,
     public NombreReservacion: String,
+    public idRes: String
     /*public idHabitacion: String,
-    public idHotel: String,
-    public idRes: String*/
+    /*public idHotel: String,
+    */
   ){}
 }

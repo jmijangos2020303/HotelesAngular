@@ -85,8 +85,7 @@ export class UsuarioService {
   }
 
 
-  updateUser(id, params, token){
-    let headersToken2 = this.headersVariable.set('Authorization', token)
-    return this._http.put(this.url + '//'+ id, params, { headers: headersToken2});
+  updateUser(id, params){
+    return this._http.put(this.url + '/EditarPerfil/'+ id, params, {headers: this.headersToken});
   }
 }

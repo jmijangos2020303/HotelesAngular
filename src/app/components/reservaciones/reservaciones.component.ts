@@ -36,6 +36,7 @@ export class ReservacionesComponent implements OnInit {
       '',
       '',
       '',
+      '',
 
     );
     this.reservacionesModelAdd = new Reservaciones(
@@ -43,6 +44,7 @@ export class ReservacionesComponent implements OnInit {
       '',
       '',
       '',
+      ''
 
     );
   }
@@ -81,6 +83,7 @@ export class ReservacionesComponent implements OnInit {
         this.reservacionesModelAdd.FechaInicio = '';
         this.reservacionesModelAdd.FechaSalida ='';
         this.reservacionesModelAdd.NombreReservacion ='';
+        this.reservacionesModelAdd.idRes = '';
 
 
         console.log(response);
