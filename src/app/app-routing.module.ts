@@ -7,6 +7,7 @@ import { ReservacionesComponent } from './components/reservaciones/reservaciones
 import { MisreservacionesComponent } from './components/misreservaciones/misreservaciones.component';
 import { HabitacionesComponent } from './components/habitaciones/habitaciones.component';
 import { ActualizarUsuarioComponent } from './components/actualizar-usuario/actualizar-usuario.component';
+import { HotelesComponent } from './components/hoteles/hoteles.component';
 
 
 const routes: Routes = [
@@ -16,7 +17,9 @@ const routes: Routes = [
   {path: 'reservaciones', component: ReservacionesComponent},
   {path: 'misreservaciones', component: MisreservacionesComponent},
   {path: 'habitaciones', component: HabitacionesComponent},
-  {path: 'actualizarUsuario', component: ActualizarUsuarioComponent}
+  {path: 'actualizarUsuario', component: ActualizarUsuarioComponent},
+  {path: 'hoteles', component: HotelesComponent},
+
 
 
 

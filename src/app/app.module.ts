@@ -12,6 +12,7 @@ import { ReservacionesComponent } from './components/reservaciones/reservaciones
 import { MisreservacionesComponent } from './components/misreservaciones/misreservaciones.component';
 import { HabitacionesComponent } from './components/habitaciones/habitaciones.component';
 import { ActualizarUsuarioComponent } from './components/actualizar-usuario/actualizar-usuario.component';
+import { HotelesComponent } from './components/hoteles/hoteles.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { ActualizarUsuarioComponent } from './components/actualizar-usuario/actu
     ReservacionesComponent,
     MisreservacionesComponent,
     HabitacionesComponent,
-    ActualizarUsuarioComponent
+    ActualizarUsuarioComponent,
+    HotelesComponent
   ],
   imports: [
     BrowserModule,

@@ -62,6 +62,10 @@ export class ReservacionesService {
     });
   }
 
+  obtenerHotelesId(idHotel,): Observable<any>{
+    return this._http.get(this.url + '/obtenerHotel/' + idHotel, {headers: this.headersVariable})
+  }
+
   getToken(){
     var token2 = localStorage.getItem('token');
     if(token2 != 'undefined'){

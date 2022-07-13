@@ -1,0 +1,139 @@
+
+<!--<div *ngFor="let hot of hotelModelGet" class="card" style="width: 18rem;">
+  <img src="https://editorial.uefa.com/resources/026f-13d74cefe05a-09e682c0c3d1-1000/paris_saint-germain_v_manchester_city_group_a_-_uefa_champions_league.jpeg" class="card-img-top" alt="...">
+  <div class="card-body">
+    <p class="card-text">{{hot.nombre}}</p>
+  </div>
+</div> -->
+
+<a type="button" class="btn btn-primary"data-bs-toggle="modal" data-bs-target="#exampleModal">Abrir modal</a>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">New message</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="mb-3">
+            <label for="recipient-name" class="col-form-label" #nombre>Nombre</label>
+            <input type="text" class="form-control" id="recipient-name" name='nombre' #nombre="ngModel" [(ngModel)]="hotelModelPost.nombre">
+
+            <label for="recipient-name" class="col-form-label">Descripcion</label>
+            <input type="text" class="form-control" id="recipient-name" name='descripcion' #descripcion="ngModel" [(ngModel)]="hotelModelPost.descripcion">
+
+            <label for="recipient-name" class="col-form-label">Direccion</label>
+            <input type="text" class="form-control" id="recipient-name"  name='direccion' #direccion="ngModel" [(ngModel)]="hotelModelPost.direccion">
+          </div>
+
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+        <button type="button" class="btn btn-primary" (click)="postHoteles()">Guardar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="app">
+
+  <div class="searchbox">
+    <i class="material-icons">search</i>
+    <input type="search" class="search" placeholder="Buscar hoteles">
+  </div>
+
+
+  <div *ngFor="let hot of hotelModelGet" class="product-card" v-for="hotel in hotels">
+    <div class="picture" :style="{'background-image':hotel.picture}"></div>
+    <div class="product-card-content">
+      <img src="https://cdn.quierohotel.com/cdn-cgi/image/quality=85,format=auto,onerror=redirect/hotel-barcelo-guatemala-city-PF39700_6.jpg"
+      class="img-fluid rounded-start" alt="...">
+      <div class="product-card-body">
+        <div class="product-info">
+          <h3 class="name">{{ hot.nombre }}</h3>
+          <div class="address">{{ hot.descripcion }}</div>
+          <div class="address">{{ hot.direccion }}</div>
+        </div>
+
+      </div>
+      <div class="product-card-actions">
+
+        <button class="btn btn-primary"  (click)="getHotelesId(hot._id)">Ver Detalles</button>
+        <button class="btn btn-primary"  (click)="eliminarHotel(hot._id)">Eliminar</button>
+        <button class="btn btn-primary" data-bs-toggle="offcanvas"
+        data-bs-target="#offcanvasExample" aria-controls="offcanvasExample"
+        (click)="getHotelesId(hot._id)" >Editar</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample"
+  aria-labelledby="offcanvasExampleLabel">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title" id="offcanvasExampleLabel">Editar Producto</h5>
+    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body">
+    <form>
+
+      <div class="mb-3">
+        <label for="inputNombreProducto" class="form-label">Nombre del Hotel</label>
+        <input type="text" class="form-control" id="nombre" name="nombre" #nombre="ngModel"
+          [(ngModel)]="hotelModelGetId.nombre">
+      </div>
+      <div class="mb-3">
+        <label for="inputNombreProveedor" class="form-label">Descripcion</label>
+        <input type="text" class="form-control" id="descripcion" name="descripcion" #descripcion="ngModel"
+          [(ngModel)]="hotelModelGetId.descripcion">
+      </div>
+      <div class="mb-3">
+        <label for="inputStock" class="form-label">Direccion</label>
+        <input type="text" class="form-control" id="direccion" name="direccion" #direccion="ngModel"
+          [(ngModel)]="hotelModelGetId.direccion">
+      </div>
+      <button type="submit" class="btn btn-success" (click)="putHoteles()" data-bs-dismiss="offcanvas">Editar
+        Hotel</button>
+    </form>
+  </div>
+ </div>
+</div>
+
+ <footer>
+  <div class="footer-container">
+      <div class="footer-content-container">
+          <h3 class="website-logo">Gestor de Hoteles</h3>
+          <span class="footer-info">Fundacion Kinal</span>
+          <span class="footer-info">academy@itskrey.com</span>
+      </div>
+      <div class="footer-menus">
+          <div class="footer-content-container">
+              <span class="menu-title">menu</span>
+              <a href="/inicio" class="menu-item-footer">Inicio</a>
+              <a href="../../../assets/Hotel.jpg" class="menu-item-footer">Courses</a>
+              <a href="../../../assets/Hotel.jpg" class="menu-item-footer">Testimonials</a>
+          </div>
+          <div class="footer-content-container">
+              <span class="menu-title">legal</span>
+              <a href="../../../assets/Hotel.jpg" class="menu-item-footer">Privacy Policy</a>
+              <a href="../../../assets/Hotel.jpg" class="menu-item-footer">Cookies</a>
+              <a href="../../../assets/Hotel.jpg" class="menu-item-footer">Legal Advice</a>
+          </div>
+      </div>
+
+      <div class="footer-content-container">
+          <span class="menu-title">follow us</span>
+          <div class="social-container">
+              <a href="../../../assets/Hotel.jpg" class="social-link"></a>
+              <a href="../../../assets/Hotel.jpg" class="social-link"></a>
+              <a href="../../../assets/Hotel.jpg" class="social-link"></a>
+          </div>
+      </div>
+  </div>
+  <div class="copyright-container">
+      <span class="copyright">Copyright 2022, Grupo 3 Todos los Derechos Reservados.</span>
+  </div>
+
+</footer>

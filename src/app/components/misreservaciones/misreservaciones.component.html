@@ -4,7 +4,7 @@
     <div class="card" style="width: 18rem;" *ngFor="let reser of reservacionesModelGet">
       <img src="../../../assets/img/hotelreservacion.jpg" class="card-img-top" alt="...">
       <div class="card-body" *ngFor="let reser of reservacionesModelGet">
-        <h5 class="card-title">Nombre del Hotel</h5>
+        <h5 class="card-title">Hotel</h5>
         <p class="card-text">La Reservacion tiene como fecha de inicio el dia {{reser.FechaInicio}}, y como fecha final es el dia {{reser.FechaSalida}}.</p>
         <p class="card-text">Nombre de la Reservacion: {{reser.NombreReservacion}}</p>
         <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
