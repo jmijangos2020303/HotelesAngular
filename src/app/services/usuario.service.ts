@@ -8,10 +8,14 @@ import { environment } from 'src/environments/environment';
 @Injectable({
   providedIn: 'root'
 })
+
 export class UsuarioService {
   public url : String = 'http://localhost:3000/api';
   public headersVariable = new HttpHeaders().set('Content-Type', 'application/json');
-  public headersToken = new HttpHeaders({'Content Type': 'application/json','Authorization': this.getToken()})
+  public headersToken = new HttpHeaders({
+    'Content-Type': 'application/json',
+    'Authorization': this.getToken()
+  })
   public token;
   public identidad;
 
@@ -84,8 +88,11 @@ export class UsuarioService {
     return this._http.put(this.url + '//'+ modelo._id, parametros, { headers: headersToken})
   }
 
-
   updateUser(id, params){
-    return this._http.put(this.url + '/EditarPerfil/'+ id, params, {headers: this.headersToken});
+    return this._http.put(environment.apiURL + '/EditarPerfil/'+ id, params, {headers: this.headersToken});
   }
+
+
 }
+
+

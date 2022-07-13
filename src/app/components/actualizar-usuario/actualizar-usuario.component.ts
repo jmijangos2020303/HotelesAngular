@@ -8,7 +8,6 @@ import Swal from 'sweetalert2';
   styleUrls: ['./actualizar-usuario.component.scss']
 })
 export class ActualizarUsuarioComponent implements OnInit {
-
   user;
 
   constructor(
@@ -40,4 +39,3 @@ export class ActualizarUsuarioComponent implements OnInit {
   }
 
 }
-
