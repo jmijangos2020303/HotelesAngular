@@ -2,7 +2,6 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Usuario } from '../models/usuario.model';
-import { environment } from 'src/environments/environment';
 
 
 @Injectable({
@@ -89,7 +88,7 @@ export class UsuarioService {
   }
 
   updateUser(id, params){
-    return this._http.put(environment.apiURL + '/EditarPerfil/'+ id, params, {headers: this.headersToken});
+    return this._http.put(this.url + '/EditarPerfil/'+ id, params, {headers: this.headersToken});
   }
 
 
